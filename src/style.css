@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@700&family=Merriweather:ital,wght@1,700&display=swap');
+
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -13,21 +15,26 @@ html {
   padding: 0;
   margin: 0;
   font-size: 20px;
+  color: #dddbf1;
+  font-family: 'Merienda', cursive;
 }
 
 body {
   display: flex;
   align-items: center;
   height: 100vh;
+  background-color: #755c1b;
 }
 
 .todolist {
   display: grid;
   grid-template-rows: auto auto 1fr auto;
-  border: 2px solid black;
-  height: 70%;
+  background-color: #7a4419;
+  height: max-content;
   width: 70%;
   margin: auto;
+  border-radius: 20px 20px;
+  border: 2px solid #383f51;
 }
 
 .list-header,
@@ -35,14 +42,23 @@ body {
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  border-bottom: 1px dotted #000;
+  border-bottom: 1px solid #383f51;
   padding: 0 20px;
   height: 50px;
   column-gap: 20px;
 }
 
+#add-new-task,
+#add-new-task::placeholder {
+  color: #ada7ac;
+  font-family: 'Merienda', cursive;
+  letter-spacing: 0.1rem;
+}
+
 .list-header > h1 {
   letter-spacing: 0.1rem;
+  font-family: 'Merriweather', serif;
+  font-size: 25px;
 }
 
 img {
@@ -67,15 +83,16 @@ input:focus {
   padding: 0 20px;
   flex-direction: row;
   grid-template-columns: auto 1fr auto;
-  border-bottom: 1px dotted #000;
+  border-bottom: 2px dotted #383f51;
 }
 
-.more {
-  justify-self: end;
+.new-task {
+  letter-spacing: 0.1rem;
 }
 
 #clear-btn {
-  border-top: 1px dotted #000;
+  cursor: pointer;
   height: 70px;
-  background-color: antiquewhite;
+  background-color: #0b2545;
+  border-radius: 0 0 19px 19px;
 }
