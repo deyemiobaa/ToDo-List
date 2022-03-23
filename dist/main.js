@@ -16,7 +16,7 @@
   \*************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"html {\\r\\n  -webkit-box-sizing: border-box;\\r\\n  -moz-box-sizing: border-box;\\r\\n  box-sizing: border-box;\\r\\n}\\r\\n\\r\\n*,\\r\\n*::before,\\r\\n*::after {\\r\\n  -webkit-box-sizing: inherit;\\r\\n  -moz-box-sizing: inherit;\\r\\n  box-sizing: inherit;\\r\\n  padding: 0;\\r\\n  margin: 0;\\r\\n  font-size: 20px;\\r\\n}\\r\\n\\r\\nbody {\\r\\n  display: flex;\\r\\n  align-items: center;\\r\\n  height: 100vh;\\r\\n}\\r\\n\\r\\n.todolist {\\r\\n  display: grid;\\r\\n  grid-template-rows: auto auto 1fr auto;\\r\\n  border: 2px solid black;\\r\\n  height: 70%;\\r\\n  width: 70%;\\r\\n  margin: auto;\\r\\n}\\r\\n\\r\\n.list-header,\\r\\n.add-new-task {\\n  display: grid;\\n  grid-template-columns: 1fr auto;\\n  align-items: center;\\n  border-bottom: 1px dotted #000;\\n  padding: 0 20px;\\n  height: 50px;\\n  column-gap: 20px;\\n}\\r\\n\\r\\n.list-header > h1 {\\r\\n  letter-spacing: 0.1rem;\\r\\n}\\r\\n\\r\\nimg {\\r\\n  height: 24px;\\r\\n}\\r\\n\\r\\ninput,\\r\\nbutton {\\r\\n  border: 0;\\r\\n  background: none;\\r\\n}\\r\\n\\r\\ninput:focus {\\r\\n  outline: none;\\r\\n}\\r\\n\\r\\n.task {\\r\\n  height: 50px;\\r\\n  display: grid;\\r\\n  align-items: center;\\r\\n  column-gap: 40px;\\r\\n  padding: 0 20px;\\r\\n  flex-direction: row;\\r\\n  grid-template-columns: auto 1fr auto;\\r\\n  border-bottom: 1px dotted #000;\\r\\n}\\r\\n\\r\\n.more {\\r\\n  justify-self: end;\\r\\n}\\r\\n\\r\\n#clear-btn {\\r\\n  border-top: 1px dotted #000;\\r\\n  height: 70px;\\r\\n}\\r\\n\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://webpack-boilerplate/./src/style.css?./node_modules/css-loader/dist/cjs.js");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"html {\\r\\n  -webkit-box-sizing: border-box;\\r\\n  -moz-box-sizing: border-box;\\r\\n  box-sizing: border-box;\\r\\n}\\r\\n\\r\\n*,\\r\\n*::before,\\r\\n*::after {\\r\\n  -webkit-box-sizing: inherit;\\r\\n  -moz-box-sizing: inherit;\\r\\n  box-sizing: inherit;\\r\\n  padding: 0;\\r\\n  margin: 0;\\r\\n  font-size: 20px;\\r\\n}\\r\\n\\r\\nbody {\\r\\n  display: flex;\\r\\n  align-items: center;\\r\\n  height: 100vh;\\r\\n}\\r\\n\\r\\n.todolist {\\r\\n  display: grid;\\r\\n  grid-template-rows: auto auto 1fr auto;\\r\\n  border: 2px solid black;\\r\\n  height: 70%;\\r\\n  width: 70%;\\r\\n  margin: auto;\\r\\n}\\r\\n\\r\\n.list-header,\\r\\n.add-new-task {\\r\\n  display: grid;\\r\\n  grid-template-columns: 1fr auto;\\r\\n  align-items: center;\\r\\n  border-bottom: 1px dotted #000;\\r\\n  padding: 0 20px;\\r\\n  height: 50px;\\r\\n  column-gap: 20px;\\r\\n}\\r\\n\\r\\n.list-header > h1 {\\r\\n  letter-spacing: 0.1rem;\\r\\n}\\r\\n\\r\\nimg {\\r\\n  height: 24px;\\r\\n}\\r\\n\\r\\ninput,\\r\\nbutton {\\r\\n  border: 0;\\r\\n  background: none;\\r\\n}\\r\\n\\r\\ninput:focus {\\r\\n  outline: none;\\r\\n}\\r\\n\\r\\n.task {\\r\\n  height: 50px;\\r\\n  display: grid;\\r\\n  align-items: center;\\r\\n  column-gap: 40px;\\r\\n  padding: 0 20px;\\r\\n  flex-direction: row;\\r\\n  grid-template-columns: auto 1fr auto;\\r\\n  border-bottom: 1px dotted #000;\\r\\n}\\r\\n\\r\\n.more {\\r\\n  justify-self: end;\\r\\n}\\r\\n\\r\\n#clear-btn {\\r\\n  border-top: 1px dotted #000;\\r\\n  height: 70px;\\r\\n  background-color: aliceblue;\\r\\n}\\r\\n\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://webpack-boilerplate/./src/style.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -110,13 +110,43 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 
 /***/ }),
 
+/***/ "./src/add-remove.js":
+/*!***************************!*\
+  !*** ./src/add-remove.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _createTask_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createTask.js */ \"./src/createTask.js\");\n/* harmony import */ var _images_bin_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./images/bin.svg */ \"./src/images/bin.svg\");\n\n\n\nconst taskContainer = document.querySelector('.task-container');\nconst addNewTaskInput = document.getElementById('add-new-task');\nconst enterBtn = document.querySelector('.enter');\n\nclass AddRemoveTask {\n  constructor() {\n    this.store = JSON.parse(localStorage.getItem('ToDoList')) || [];\n  }\n\n  resetIndex() {\n    let initialIndex = 1;\n    this.store.forEach((task) => {\n      task.index = initialIndex;\n      initialIndex += 1;\n    });\n  }\n\n  deleteTask(button) {\n    button.addEventListener('click', () => {\n      this.store = this.store.filter(\n        (tasks) => button.id !== tasks.id,\n      );\n      taskContainer.innerHTML = '';\n      this.store.forEach((task) => {\n        this.newTask(task.description, task.id);\n      });\n      localStorage.setItem('ToDoList', JSON.stringify(this.store));\n    });\n  }\n\n  newTask(task, id) {\n    taskContainer.innerHTML\n      += `\n      <div class=\"task\">\n          <input type=\"checkbox\" class=\"check\">\n          <input class=\"new-task ${id}\" type=\"text\" value=\"${task}\">\n          <img id=\"${id}\" class=\"delete\" src=\"${_images_bin_svg__WEBPACK_IMPORTED_MODULE_1__}\" alt=\"more\">\n      </div>\n      `;\n\n    const deleteBtn = document.querySelectorAll('.delete');\n    deleteBtn.forEach((btn) => {\n      this.deleteTask(btn);\n      this.resetIndex();\n    });\n    localStorage.setItem('ToDoList', JSON.stringify(this.store));\n  }\n\n  localStorageToWebpage() {\n    if (localStorage !== null) {\n      const store = JSON.parse(localStorage.getItem('ToDoList'));\n      store.forEach((task) => {\n        this.newTask(task.description, task.id);\n      });\n    }\n  }\n\n  submitNewTaskEntry() {\n    enterBtn.addEventListener('click', () => {\n      if (addNewTaskInput.value === '') {\n        return;\n      }\n      const index = this.store.length < 1 ? 1 : this.store.length + 1;\n      const currTask = new _createTask_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](addNewTaskInput.value, index);\n      this.store.push(currTask);\n      this.newTask(currTask.description, currTask.id);\n      addNewTaskInput.value = '';\n    });\n\n    localStorage.setItem('ToDoList', JSON.stringify(this.store));\n    this.localStorageToWebpage();\n  }\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AddRemoveTask);\n\n\n//# sourceURL=webpack://webpack-boilerplate/./src/add-remove.js?");
+
+/***/ }),
+
+/***/ "./src/createTask.js":
+/*!***************************!*\
+  !*** ./src/createTask.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nclass NewTask {\n  constructor(description, index) {\n    this.description = description;\n    this.index = index;\n    this.id = Math.random().toString(36).substr(2, 5).replace(/[^a-z]/g, '');\n    this.completed = false;\n  }\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (NewTask);\n\n//# sourceURL=webpack://webpack-boilerplate/./src/createTask.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _images_more_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./images/more.svg */ \"./src/images/more.svg\");\n/* harmony import */ var _images_enter_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./images/enter.svg */ \"./src/images/enter.svg\");\n/* harmony import */ var _images_rotation_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./images/rotation.svg */ \"./src/images/rotation.svg\");\n\n\n\n\n\nconst tasks = [\n  {\n    description: 'This is my first task',\n    completed: false,\n    index: 0,\n  },\n  {\n    description: 'This is my second task',\n    completed: false,\n    index: 1,\n  },\n  {\n    description: 'This is my third task',\n    completed: false,\n    index: 2,\n  },\n  {\n    description: 'This is my fourth task',\n    completed: false,\n    index: 3,\n  },\n];\n\nconst taskContainer = document.querySelector('.task-container');\nconst refreshBtn = document.querySelector('.refresh');\nconst enterBtn = document.querySelector('.enter');\n\nrefreshBtn.src = _images_rotation_svg__WEBPACK_IMPORTED_MODULE_3__;\nenterBtn.src = _images_enter_svg__WEBPACK_IMPORTED_MODULE_2__;\n\nconst fillTasks = () => {\n  for (let i = 0; i < tasks.length; i += 1) {\n    taskContainer.innerHTML\n      += `\n      <div class=\"task\">\n          <input id=\"front-end\" type=\"checkbox\" value=\"front-end\">\n          <input type=\"text\" value=\"${tasks[i].description}\" class=\"new-task\">\n          <img class=\"more\" src=\"${_images_more_svg__WEBPACK_IMPORTED_MODULE_1__}\" alt=\"more\">\n      </div>\n      `;\n  }\n};\nfillTasks();\n\n//# sourceURL=webpack://webpack-boilerplate/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _images_enter_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./images/enter.svg */ \"./src/images/enter.svg\");\n/* harmony import */ var _images_rotation_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./images/rotation.svg */ \"./src/images/rotation.svg\");\n/* harmony import */ var _add_remove_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./add-remove.js */ \"./src/add-remove.js\");\n\n\n\n\n\nconst refreshBtn = document.querySelector('.refresh');\nconst enterBtn = document.querySelector('.enter');\n\nrefreshBtn.src = _images_rotation_svg__WEBPACK_IMPORTED_MODULE_2__;\nenterBtn.src = _images_enter_svg__WEBPACK_IMPORTED_MODULE_1__;\n\nconst newlib = new _add_remove_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"]();\n\nnewlib.submitNewTaskEntry();\n\n\n//# sourceURL=webpack://webpack-boilerplate/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/images/bin.svg":
+/*!****************************!*\
+  !*** ./src/images/bin.svg ***!
+  \****************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"images/4d8bc1a472394e082c81.svg\";\n\n//# sourceURL=webpack://webpack-boilerplate/./src/images/bin.svg?");
 
 /***/ }),
 
@@ -126,17 +156,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
   \******************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"images/5cfe19e8cc3187cda094.svg\";\n\n//# sourceURL=webpack://webpack-boilerplate/./src/images/enter.svg?");
-
-/***/ }),
-
-/***/ "./src/images/more.svg":
-/*!*****************************!*\
-  !*** ./src/images/more.svg ***!
-  \*****************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-eval("module.exports = __webpack_require__.p + \"images/b06f44cc3ce85ef812e6.svg\";\n\n//# sourceURL=webpack://webpack-boilerplate/./src/images/more.svg?");
+eval("module.exports = __webpack_require__.p + \"images/f2c403a75be9d17edcb8.svg\";\n\n//# sourceURL=webpack://webpack-boilerplate/./src/images/enter.svg?");
 
 /***/ }),
 
@@ -146,7 +166,7 @@ eval("module.exports = __webpack_require__.p + \"images/b06f44cc3ce85ef812e6.svg
   \*********************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"images/a0776bf1040487a5b393.svg\";\n\n//# sourceURL=webpack://webpack-boilerplate/./src/images/rotation.svg?");
+eval("module.exports = __webpack_require__.p + \"images/f2813d53369537d73fe0.svg\";\n\n//# sourceURL=webpack://webpack-boilerplate/./src/images/rotation.svg?");
 
 /***/ })
 
