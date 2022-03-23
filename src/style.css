@@ -77,4 +77,5 @@ input:focus {
 #clear-btn {
   border-top: 1px dotted #000;
   height: 70px;
+  background-color: antiquewhite;
 }
