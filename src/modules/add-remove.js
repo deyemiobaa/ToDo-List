@@ -31,7 +31,7 @@ class AddRemoveTask {
         this.newTask(task.description, task.id);
       });
       localStorage.setItem('ToDoList', JSON.stringify(this.store));
-    })
+    });
   }
 
   deleteTask(button) {
@@ -93,7 +93,7 @@ class AddRemoveTask {
       this.newTask(currTask.description, currTask.id);
       addNewTaskInput.value = '';
     });
-    this.clearCompletedTasks(clearAllBtn)
+    this.clearCompletedTasks(clearAllBtn);
     localStorage.setItem('ToDoList', JSON.stringify(this.store));
     this.localStorageToWebpage();
     // delete all tasks
@@ -102,4 +102,3 @@ class AddRemoveTask {
 }
 
 export default AddRemoveTask;
-
