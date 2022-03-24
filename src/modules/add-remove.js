@@ -66,11 +66,7 @@ class AddRemoveTask {
 
     // mark item as completed
     const checkBox = document.querySelectorAll('.check');
-    markItemAsComplete(checkBox, this.store);
-
-    // clear all completed items
-
-    // clearCompleteItems(clearAllBtn, this.store, taskContainer, this.newTask);
+    markItemAsComplete(checkBox, this.store); 
   }
 
   localStorageToWebpage() {
