@@ -1,7 +1,7 @@
 import './style.css';
 import enter from './images/enter.svg';
 import refresh from './images/rotation.svg';
-import AddRemoveTask from './add-remove.js';
+import AddRemoveTask from './modules/add-remove.js';
 
 const refreshBtn = document.querySelector('.refresh');
 const enterBtn = document.querySelector('.enter');

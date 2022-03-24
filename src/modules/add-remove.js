@@ -1,9 +1,14 @@
 import NewTask from './createTask.js';
-import discard from './images/bin.svg';
+import discard from '../images/bin.svg';
+import {
+  markItemAsComplete, deleteAllTasks,
+} from './interactive-page.js';
 
 const taskContainer = document.querySelector('.task-container');
 const addNewTaskInput = document.getElementById('add-new-task');
 const enterBtn = document.querySelector('.enter');
+const clearAllBtn = document.getElementById('clear-btn');
+const refresh = document.querySelector('.refresh');
 
 class AddRemoveTask {
   constructor() {
@@ -15,6 +20,17 @@ class AddRemoveTask {
     this.store.forEach((task) => {
       task.index = initialIndex;
       initialIndex += 1;
+    });
+  }
+
+  clearCompletedTasks(button) {
+    button.addEventListener('click', () => {
+      this.store = this.store.filter((task) => task.completed === false);
+      taskContainer.innerHTML = '';
+      this.store.forEach((task) => {
+        this.newTask(task.description, task.id);
+      });
+      localStorage.setItem('ToDoList', JSON.stringify(this.store));
     });
   }
 
@@ -36,7 +52,7 @@ class AddRemoveTask {
       += `
       <div class="task">
           <input type="checkbox" class="check">
-          <input class="new-task ${id}" type="text" value="${task}">
+          <input id="${id}" class="new-task" type="text" value="${task}">
           <img id="${id}" class="delete" src="${discard}" alt="more">
       </div>
       `;
@@ -47,6 +63,10 @@ class AddRemoveTask {
       this.resetIndex();
     });
     localStorage.setItem('ToDoList', JSON.stringify(this.store));
+
+    // mark item as completed
+    const checkBox = document.querySelectorAll('.check');
+    markItemAsComplete(checkBox, this.store);
   }
 
   localStorageToWebpage() {
@@ -69,9 +89,11 @@ class AddRemoveTask {
       this.newTask(currTask.description, currTask.id);
       addNewTaskInput.value = '';
     });
-
+    this.clearCompletedTasks(clearAllBtn);
     localStorage.setItem('ToDoList', JSON.stringify(this.store));
     this.localStorageToWebpage();
+    // delete all tasks
+    deleteAllTasks(refresh, taskContainer);
   }
 }
 

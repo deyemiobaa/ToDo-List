@@ -90,6 +90,12 @@ input:focus {
   letter-spacing: 0.1rem;
 }
 
+.line {
+  text-decoration: line-through;
+  font-size: 17px;
+  color: #ada7ac;
+}
+
 #clear-btn {
   cursor: pointer;
   height: 70px;
