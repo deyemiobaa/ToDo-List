@@ -1,5 +1,4 @@
 import NewTask from './createTask.js';
-import discard from '../images/bin.svg';
 import {
   markItemAsComplete, deleteAllTasks,
 } from './interactive-page.js';
@@ -53,7 +52,9 @@ class AddRemoveTask {
       <div class="task">
           <input type="checkbox" class="check">
           <input id="${id}" class="new-task" type="text" value="${task}">
-          <img id="${id}" class="delete" src="${discard}" alt="more">
+          <span id="${id}" class="delete">
+            <i class="fa-solid fa-trash-can"></i>
+          </span>
       </div>
       `;
 
@@ -78,17 +79,27 @@ class AddRemoveTask {
     }
   }
 
+  addNewTask() {
+    const index = this.store.length < 1 ? 1 : this.store.length + 1;
+    const currTask = new NewTask(addNewTaskInput.value, index);
+    this.store.push(currTask);
+    this.newTask(currTask.description, currTask.id);
+    addNewTaskInput.value = '';
+  }
+
   submitNewTaskEntry() {
     enterBtn.addEventListener('click', () => {
-      if (addNewTaskInput.value === '') {
-        return;
+      if (addNewTaskInput.value !== '') {
+        this.addNewTask();
       }
-      const index = this.store.length < 1 ? 1 : this.store.length + 1;
-      const currTask = new NewTask(addNewTaskInput.value, index);
-      this.store.push(currTask);
-      this.newTask(currTask.description, currTask.id);
-      addNewTaskInput.value = '';
     });
+
+    addNewTaskInput.addEventListener('keydown', (e) => {
+      if (e.code === 'Enter') {
+        this.addNewTask();
+      }
+    });
+
     this.clearCompletedTasks(clearAllBtn);
     localStorage.setItem('ToDoList', JSON.stringify(this.store));
     this.localStorageToWebpage();

@@ -16,7 +16,6 @@ html {
   margin: 0;
   font-size: 20px;
   color: #dddbf1;
-  font-family: 'Merienda', cursive;
 }
 
 body {
@@ -61,8 +60,8 @@ body {
   font-size: 25px;
 }
 
-img {
-  height: 24px;
+.fa-solid {
+  font-size: 24px;
 }
 
 input,
@@ -87,7 +86,8 @@ input:focus {
 }
 
 .new-task {
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.07rem;
+  font-family: 'Merienda', cursive;
 }
 
 .line {
@@ -97,6 +97,7 @@ input:focus {
 }
 
 #clear-btn {
+  font-family: 'Merienda', cursive;
   cursor: pointer;
   height: 70px;
   background-color: #0b2545;
