@@ -78,6 +78,11 @@ class AddRemoveTask {
       field.addEventListener('blur', () => {
         makeInputDefault(field)
       })
+      field.addEventListener('keydown', (e) => {
+        if (e.code === 'Enter') {
+          makeInputDefault(field)
+        }
+      })
     })
   }
 

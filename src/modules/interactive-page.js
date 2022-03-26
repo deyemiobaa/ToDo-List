@@ -26,10 +26,12 @@ export const deleteAllTasks = (button, container) => {
 export const updateInput = (field, array) => {
   
   if (field.classList.contains('line')) {
+    field.readOnly = false
     field.classList.remove('line')
     field.classList.add('active')
   } else {
     field.classList.add('active')
+    field.readOnly = false
   }
 
   field.addEventListener('change', () => {
@@ -46,8 +48,10 @@ export const makeInputDefault = (field) => {
   if (field.previousElementSibling.checked) {
     field.classList.add('line')
     field.classList.remove('active')
+    field.readOnly = true
   } else {
     field.classList.remove('active')
+    field.readOnly = true
   }
 }
 
