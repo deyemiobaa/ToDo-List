@@ -14,38 +14,37 @@ html {
   box-sizing: inherit;
   padding: 0;
   margin: 0;
-  font-size: 20px;
+  font-size: 17px;
   color: #dddbf1;
-  font-family: 'Merienda', cursive;
 }
 
 body {
   display: flex;
-  align-items: center;
+  margin-top: 150px;
+  justify-content: center;
   height: 100vh;
   background-color: #755c1b;
 }
 
 .todolist {
   display: grid;
-  grid-template-rows: auto auto 1fr auto;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, auto);
   background-color: #7a4419;
   height: max-content;
-  width: 70%;
-  margin: auto;
+  max-width: 900px;
   border-radius: 20px 20px;
   border: 2px solid #383f51;
 }
 
 .list-header,
 .add-new-task {
-  display: grid;
-  grid-template-columns: 1fr auto;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #383f51;
   padding: 0 20px;
   height: 50px;
-  column-gap: 20px;
 }
 
 #add-new-task,
@@ -58,11 +57,12 @@ body {
 .list-header > h1 {
   letter-spacing: 0.1rem;
   font-family: 'Merriweather', serif;
-  font-size: 25px;
+  font-size: 20px;
 }
 
-img {
-  height: 24px;
+.fa-solid {
+  font-size: 24px;
+  cursor: pointer;
 }
 
 input,
@@ -76,18 +76,30 @@ input:focus {
 }
 
 .task {
+  cursor: move;
   height: 50px;
   display: grid;
   align-items: center;
-  column-gap: 40px;
-  padding: 0 20px;
-  flex-direction: row;
   grid-template-columns: auto 1fr auto;
+  column-gap: 20px;
+  padding: 0 20px;
   border-bottom: 2px dotted #383f51;
 }
 
+input[type=checkbox] {
+  transform: scale(1.5);
+}
+
 .new-task {
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.07rem;
+  font-family: 'Merienda', cursive;
+  border-radius: 9px;
+  padding-left: 10px;
+}
+
+.active {
+  background: #b4b88c;
+  color: #000;
 }
 
 .line {
@@ -97,8 +109,29 @@ input:focus {
 }
 
 #clear-btn {
+  font-family: 'Merienda', cursive;
   cursor: pointer;
   height: 70px;
   background-color: #0b2545;
   border-radius: 0 0 19px 19px;
+}
+
+@media screen and (min-width: 600px) {
+  * {
+    font-size: 20px;
+  }
+
+  .list-header > h1 {
+    font-size: 25px;
+  }
+
+  .todolist {
+    width: 70%;
+  }
+
+  .list-header,
+  .add-new-task {
+    display: grid;
+    grid-template-columns: 1fr auto;
+  }
 }
