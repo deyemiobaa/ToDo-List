@@ -1,6 +1,6 @@
 import NewTask from './createTask.js';
 import {
-  markItemAsComplete, deleteAllTasks, updateInput, makeInputDefault
+  markItemAsComplete, deleteAllTasks, updateInput, makeInputDefault,
 } from './interactive-page.js';
 
 const taskContainer = document.querySelector('.task-container');
@@ -70,20 +70,20 @@ class AddRemoveTask {
     localStorage.setItem('ToDoList', JSON.stringify(this.store));
 
     // edit an input
-    const fieldInputs = document.querySelectorAll('.new-task')
-    fieldInputs.forEach(field => {
+    const fieldInputs = document.querySelectorAll('.new-task');
+    fieldInputs.forEach((field) => {
       field.addEventListener('click', () => {
-        updateInput(field, this.store)
-      })
+        updateInput(field, this.store);
+      });
       field.addEventListener('blur', () => {
-        makeInputDefault(field)
-      })
+        makeInputDefault(field);
+      });
       field.addEventListener('keydown', (e) => {
         if (e.code === 'Enter') {
-          makeInputDefault(field)
+          makeInputDefault(field);
         }
-      })
-    })
+      });
+    });
   }
 
   localStorageToWebpage() {

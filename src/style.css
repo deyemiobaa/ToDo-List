@@ -65,7 +65,6 @@ body {
   cursor: pointer;
 }
 
-
 input,
 button {
   border: 0;
@@ -88,7 +87,7 @@ input:focus {
 }
 
 input[type=checkbox] {
-    transform: scale(1.5);
+  transform: scale(1.5);
 }
 
 .new-task {
@@ -117,8 +116,7 @@ input[type=checkbox] {
   border-radius: 0 0 19px 19px;
 }
 
-
-@media screen and (min-width:600px) {
+@media screen and (min-width: 600px) {
   * {
     font-size: 20px;
   }
@@ -132,9 +130,8 @@ input[type=checkbox] {
   }
 
   .list-header,
-  .add-new-task{
+  .add-new-task {
     display: grid;
     grid-template-columns: 1fr auto;
   }
-  
 }
