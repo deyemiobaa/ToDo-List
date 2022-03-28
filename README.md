@@ -1,6 +1,9 @@
 # ToDo-List App
 
 > A web app to keep track of your important tasks
+
+## You can view the live version [here](https://deyemiobaa.github.io/ToDo-List/)
+
 ## Built With
 
 - Major languages: HTML, CSS, JavaScript
