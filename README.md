@@ -8,7 +8,7 @@
 - Frameworks: N/A
 - Technologies used: Webpack
 
-##### You can view the live version [here](https://deyemiobaa.github.io/ToDo-List/)
+#### You can view the live version [here](https://deyemiobaa.github.io/ToDo-List/)
 
 <img src="src/images/app-sc.png" alt="Project Snapshot">
 
