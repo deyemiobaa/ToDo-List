@@ -60,11 +60,6 @@ body {
   font-size: 20px;
 }
 
-.fa-solid {
-  font-size: 24px;
-  cursor: pointer;
-}
-
 input,
 button {
   border: 0;
@@ -84,6 +79,11 @@ input:focus {
   column-gap: 20px;
   padding: 0 20px;
   border-bottom: 2px dotted #383f51;
+}
+
+.fa-solid {
+  font-size: 24px;
+  cursor: pointer;
 }
 
 input[type=checkbox] {
