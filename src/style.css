@@ -120,8 +120,7 @@ input[type=checkbox] {
 .error {
   color: #0b2545;
   visibility: hidden;
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 19px;
   padding: 12px;
   position: absolute;
   width: max-content;
