@@ -109,26 +109,33 @@ class AddRemoveTask {
   }
 
   addNewTask() {
-    const index = this.store.length < 1 ? 1 : this.store.length + 1;
-    const currTask = new NewTask(addNewTaskInput.value, index);
-    this.store.push(currTask);
-    this.newTask(currTask.description, currTask.index, currTask);
-    addNewTaskInput.value = '';
+    const errormsg = document.getElementById('error-msg');
+    if (addNewTaskInput.value === '') {
+      errormsg.style.visibility = 'visible';
+      setTimeout(() => {
+        errormsg.style.visibility = 'hidden';
+      }, 2000);
+    } else {
+      const index = this.store.length < 1 ? 1 : this.store.length + 1;
+      const currTask = new NewTask(addNewTaskInput.value, index);
+      this.store.push(currTask);
+      this.newTask(currTask.description, currTask.index, currTask);
+      addNewTaskInput.value = '';
+    }
   }
 
   submitNewTaskEntry() {
     enterBtn.addEventListener('click', () => {
-      if (addNewTaskInput.value !== '') {
-        this.addNewTask();
-      } 
-    });
+      this.addNewTask();
+    }
+    );
 
     addNewTaskInput.addEventListener('keydown', (e) => {
       if (e.code === 'Enter') {
         this.addNewTask();
       }
     });
-    
+
     this.clearCompletedTasks(clearAllBtn);
     localStorage.setItem('ToDoList', JSON.stringify(this.store));
     this.localStorageToWebpage();

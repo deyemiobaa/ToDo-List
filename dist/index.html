@@ -10,13 +10,14 @@
   <script defer src="main.js"></script></head>
 
   <body>
+    <span id="error-msg" class="error" aria-live="polite">Please enter a task</span>
     <div class="todolist">
       <div class="list-header">
         <h1>Todays' ToDo</h1>
         <span class="refresh"><i class="fa-solid fa-rotate"></i></span>
       </div>
       <div class="add-new-task">
-        <input id="add-new-task" type="text" placeholder="Add to your list..." required>
+        <input id="add-new-task" type="text" placeholder="Add to your list...">
         <span class="enter"><i class="fa-solid fa-right-to-bracket"></i></span>
       </div>
       <div class="task-container">

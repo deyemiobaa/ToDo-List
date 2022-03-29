@@ -116,6 +116,33 @@ input[type=checkbox] {
   border-radius: 0 0 19px 19px;
 }
 
+/* error message */
+.error {
+  color: #0b2545;
+  visibility: hidden;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 12px;
+  position: absolute;
+  width: max-content;
+  background-color: #c1c7d0;
+  color: #0a2759;
+  text-align: center;
+  top: 12%;
+  border-radius: 5px;
+}
+
+.error::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #c1c7d0 transparent transparent transparent;
+}
+
 @media screen and (min-width: 600px) {
   * {
     font-size: 20px;
