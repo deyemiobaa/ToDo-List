@@ -1,6 +1,6 @@
 import NewTask from './createTask.js';
 import {
-  markItemAsComplete, deleteAllTasks, updateInput, makeInputDefault,
+  markItemAsComplete, deleteAllTasks, updateInput, makeInputDefault, restoreDefault,
 } from './interactive-page.js';
 
 const taskContainer = document.querySelector('.task-container');
@@ -27,7 +27,7 @@ class AddRemoveTask {
       this.store = this.store.filter((task) => task.completed === false);
       taskContainer.innerHTML = '';
       this.store.forEach((task) => {
-        this.newTask(task.description, task.id);
+        this.newTask(task.description, task.index, task);
       });
       localStorage.setItem('ToDoList', JSON.stringify(this.store));
     });
@@ -36,27 +36,40 @@ class AddRemoveTask {
   deleteTask(button) {
     button.addEventListener('click', () => {
       this.store = this.store.filter(
-        (tasks) => button.parentElement.id !== tasks.id,
+        (tasks) => Number(button.parentElement.id) !== tasks.index,
       );
       taskContainer.innerHTML = '';
       this.store.forEach((task) => {
-        this.newTask(task.description, task.id);
+        this.newTask(task.description, task.index, task);
       });
       localStorage.setItem('ToDoList', JSON.stringify(this.store));
     });
   }
 
-  newTask(task, id) {
-    taskContainer.innerHTML
-      += `
+  newTask(task, index, taskObject) {
+    if (taskObject.completed) {
+      taskContainer.innerHTML
+        += `
       <div class="task">
-          <input type="checkbox" class="check">
-          <input id="${id}" class="new-task" type="text" value="${task}">
-          <span id="${id}">
+          <input type="checkbox" class="check" checked>
+          <input id="${index}" class="new-task line" type="text" value="${task}">
+          <span id="${index}">
             <i class="delete fa-solid fa-trash-can"></i>
           </span>
       </div>
-      `;
+      `
+    } else {
+      taskContainer.innerHTML
+        += `
+      <div class="task">
+          <input type="checkbox" class="check">
+          <input id="${index}" class="new-task" type="text" value="${task}">
+          <span id="${index}">
+            <i class="delete fa-solid fa-trash-can"></i>
+          </span>
+      </div>
+      `
+    }
 
     // mark item as completed
     const checkBox = document.querySelectorAll('.check');
@@ -90,7 +103,7 @@ class AddRemoveTask {
     if (localStorage !== null) {
       const store = JSON.parse(localStorage.getItem('ToDoList'));
       store.forEach((task) => {
-        this.newTask(task.description, task.id);
+        this.newTask(task.description, task.index, task);
       });
     }
   }
@@ -99,7 +112,7 @@ class AddRemoveTask {
     const index = this.store.length < 1 ? 1 : this.store.length + 1;
     const currTask = new NewTask(addNewTaskInput.value, index);
     this.store.push(currTask);
-    this.newTask(currTask.description, currTask.id);
+    this.newTask(currTask.description, currTask.index, currTask);
     addNewTaskInput.value = '';
   }
 
@@ -107,7 +120,7 @@ class AddRemoveTask {
     enterBtn.addEventListener('click', () => {
       if (addNewTaskInput.value !== '') {
         this.addNewTask();
-      }
+      } 
     });
 
     addNewTaskInput.addEventListener('keydown', (e) => {
@@ -115,6 +128,7 @@ class AddRemoveTask {
         this.addNewTask();
       }
     });
+    
     this.clearCompletedTasks(clearAllBtn);
     localStorage.setItem('ToDoList', JSON.stringify(this.store));
     this.localStorageToWebpage();

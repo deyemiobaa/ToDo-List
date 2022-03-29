@@ -2,7 +2,7 @@ export const markItemAsComplete = (checkbox, array) => {
   checkbox.forEach((box) => {
     box.addEventListener('change', () => {
       const result = array.filter(
-        (task) => box.nextElementSibling.id === task.id,
+        (task) => Number(box.nextElementSibling.id) === task.index,
       );
       if (box.checked) {
         box.nextElementSibling.classList.add('line');
@@ -35,7 +35,7 @@ export const updateInput = (field, array) => {
 
   field.addEventListener('change', () => {
     const result = array.filter(
-      (task) => field.id === task.id,
+      (task) => Number(field.id) === task.index,
     );
     array[result[0].index - 1].description = field.value;
     localStorage.setItem('ToDoList', JSON.stringify(array));
@@ -52,3 +52,9 @@ export const makeInputDefault = (field) => {
     field.readOnly = true;
   }
 };
+
+export const restoreDefault = (field) => { 
+  if(field.classList.contains('line')) {
+    field.previousElementSibling.checked = true;
+  }
+}
