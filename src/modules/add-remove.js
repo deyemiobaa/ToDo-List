@@ -1,10 +1,9 @@
-import NewTask from './createTask.js';
+
 import {
   markItemAsComplete, deleteAllTasks, updateInput, makeInputDefault,
 } from './interactive-page.js';
 
 const taskContainer = document.querySelector('.task-container');
-const addNewTaskInput = document.getElementById('add-new-task');
 const enterBtn = document.querySelector('.enter');
 const clearAllBtn = document.getElementById('clear-btn');
 const refresh = document.querySelector('.refresh');
@@ -33,54 +32,56 @@ class AddRemoveTask {
     });
   }
 
-  deleteTask(button) {
-    button.addEventListener('click', () => {
-      this.store = this.store.filter(
-        (tasks) => Number(button.parentElement.id) !== tasks.index,
-      );
-      taskContainer.innerHTML = '';
-      this.store.forEach((task) => {
-        this.newTask(task.description, task.index, task);
-      });
-      localStorage.setItem('ToDoList', JSON.stringify(this.store));
-    });
+  deleteTask(index) {
+    this.store = this.store.filter(task => task.index !== index);
+    this.resetIndex();
+    this.newTask();
+    localStorage.setItem('ToDoList', JSON.stringify(this.store));
   }
 
-  newTask(task, index, taskObject) {
-    if (taskObject.completed) {
-      taskContainer.innerHTML
-        += `
+  newTask() {
+    const taskContainer = document.querySelector('.task-container');
+    taskContainer.innerHTML = '';
+    this.store.forEach(task => {
+      if (task.completed) {
+        taskContainer.innerHTML
+          += `
       <div class="task">
           <input type="checkbox" class="check" checked>
-          <input id="${index}" class="new-task line" type="text" value="${task}">
-          <span id="${index}">
+          <input id="${task.index}" class="new-task line" type="text" value="${task.description}">
+          <span id="${task.index}">
             <i class="delete fa-solid fa-trash-can"></i>
           </span>
       </div>
       `
-    } else {
-      taskContainer.innerHTML
-        += `
+      } else {
+        taskContainer.innerHTML
+          += `
       <div class="task">
           <input type="checkbox" class="check">
-          <input id="${index}" class="new-task" type="text" value="${task}">
-          <span id="${index}">
+          <input id="${task.index}" class="new-task" type="text" value="${task.description}">
+          <span id="${task.index}">
             <i class="delete fa-solid fa-trash-can"></i>
           </span>
       </div>
       `
-    }
+      }
+    })
+
+    localStorage.setItem('ToDoList', JSON.stringify(this.store));
 
     // mark item as completed
     const checkBox = document.querySelectorAll('.check');
     markItemAsComplete(checkBox, this.store);
 
+    // delete an item
     const deleteBtn = document.querySelectorAll('.delete');
     deleteBtn.forEach((btn) => {
-      this.deleteTask(btn);
-      this.resetIndex();
+      btn.addEventListener('click', () => {
+        taskContainer.innerHTML = ''
+        this.deleteTask(Number(btn.parentElement.id));
+      });
     });
-    localStorage.setItem('ToDoList', JSON.stringify(this.store));
 
     // edit an input
     const fieldInputs = document.querySelectorAll('.new-task');
@@ -108,31 +109,45 @@ class AddRemoveTask {
     }
   }
 
-  addNewTask() {
-    const errormsg = document.getElementById('error-msg');
-    if (addNewTaskInput.value === '') {
-      errormsg.style.visibility = 'visible';
-      setTimeout(() => {
-        errormsg.style.visibility = 'hidden';
-      }, 2000);
-    } else {
-      const index = this.store.length < 1 ? 1 : this.store.length + 1;
-      const currTask = new NewTask(addNewTaskInput.value, index);
-      this.store.push(currTask);
-      this.newTask(currTask.description, currTask.index, currTask);
-      addNewTaskInput.value = '';
-    }
+  addNewTask(task) {
+    const currTask = {
+      index: this.store.length < 1 ? 1 : this.store.length + 1,
+      description: task,
+      completed: false,
+    };
+    this.store.push(currTask);
+    this.newTask();
+    localStorage.setItem('ToDoList', JSON.stringify(this.store));
   }
 
   submitNewTaskEntry() {
+    const addNewTaskInput = document.getElementById('add-new-task');
+    const errormsg = document.getElementById('error-msg');
+
     enterBtn.addEventListener('click', () => {
-      this.addNewTask();
+      if (addNewTaskInput.value === '') {
+        errormsg.style.visibility = 'visible';
+        setTimeout(() => {
+          errormsg.style.visibility = 'hidden';
+        }, 2000);
+      } else {
+        this.addNewTask(addNewTaskInput.value);
+        addNewTaskInput.value = '';
+      }
     }
     );
 
     addNewTaskInput.addEventListener('keydown', (e) => {
       if (e.code === 'Enter') {
-        this.addNewTask();
+        if (addNewTaskInput.value === '') {
+          errormsg.style.visibility = 'visible';
+          setTimeout(() => {
+            errormsg.style.visibility = 'hidden';
+          }, 2000);
+        } else {
+          this.addNewTask(addNewTaskInput.value);
+          addNewTaskInput.value = '';
+        }
       }
     });
 
