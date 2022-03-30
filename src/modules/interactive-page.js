@@ -52,9 +52,3 @@ export const makeInputDefault = (field) => {
     field.readOnly = true;
   }
 };
-
-export const restoreDefault = (field) => { 
-  if(field.classList.contains('line')) {
-    field.previousElementSibling.checked = true;
-  }
-}

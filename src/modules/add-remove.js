@@ -1,6 +1,6 @@
 import NewTask from './createTask.js';
 import {
-  markItemAsComplete, deleteAllTasks, updateInput, makeInputDefault, restoreDefault,
+  markItemAsComplete, deleteAllTasks, updateInput, makeInputDefault,
 } from './interactive-page.js';
 
 const taskContainer = document.querySelector('.task-container');
