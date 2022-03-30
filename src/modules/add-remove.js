@@ -1,4 +1,3 @@
-
 import {
   markItemAsComplete, deleteAllTasks, updateInput, makeInputDefault,
 } from './interactive-page.js';
@@ -33,7 +32,7 @@ class AddRemoveTask {
   }
 
   deleteTask(index) {
-    this.store = this.store.filter(task => task.index !== index);
+    this.store = this.store.filter((task) => task.index !== index);
     this.resetIndex();
     this.newTask();
     localStorage.setItem('ToDoList', JSON.stringify(this.store));
@@ -42,7 +41,7 @@ class AddRemoveTask {
   newTask() {
     const taskContainer = document.querySelector('.task-container');
     taskContainer.innerHTML = '';
-    this.store.forEach(task => {
+    this.store.forEach((task) => {
       if (task.completed) {
         taskContainer.innerHTML
           += `
@@ -53,7 +52,7 @@ class AddRemoveTask {
             <i class="delete fa-solid fa-trash-can"></i>
           </span>
       </div>
-      `
+      `;
       } else {
         taskContainer.innerHTML
           += `
@@ -64,9 +63,9 @@ class AddRemoveTask {
             <i class="delete fa-solid fa-trash-can"></i>
           </span>
       </div>
-      `
+      `;
       }
-    })
+    });
 
     localStorage.setItem('ToDoList', JSON.stringify(this.store));
 
@@ -78,7 +77,7 @@ class AddRemoveTask {
     const deleteBtn = document.querySelectorAll('.delete');
     deleteBtn.forEach((btn) => {
       btn.addEventListener('click', () => {
-        taskContainer.innerHTML = ''
+        taskContainer.innerHTML = '';
         this.deleteTask(Number(btn.parentElement.id));
       });
     });
@@ -134,8 +133,7 @@ class AddRemoveTask {
         this.addNewTask(addNewTaskInput.value);
         addNewTaskInput.value = '';
       }
-    }
-    );
+    });
 
     addNewTaskInput.addEventListener('keydown', (e) => {
       if (e.code === 'Enter') {

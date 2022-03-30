@@ -1,9 +1,9 @@
-
 /**
  * @jest-environment jsdom
  */
 
 import AddRemoveTask from '../modules/add-remove.js';
+
 document.body.innerHTML = `
 <div class="todolist">
       <div class="list-header">
@@ -18,23 +18,23 @@ document.body.innerHTML = `
       </div>
       <button type="button" id="clear-btn">Clear all completed</button>
     </div>
-`
+`;
 describe('add and delete', () => {
-  test('add task', () => { 
+  test('add task', () => {
     // add two new tasks using the addNewTask method
     const AddTask = new AddRemoveTask();
     AddTask.addNewTask('test');
     AddTask.addNewTask('test2');
 
     // check if the array has two tasks
-    expect(AddTask.store.length).toBe(2)
+    expect(AddTask.store.length).toBe(2);
 
     // check if the inner html contains the two tasks
-    expect(document.querySelector('.task-container').children.length).toBe(2)
+    expect(document.querySelector('.task-container').children.length).toBe(2);
 
     // check if the local storage is not empty
     expect(localStorage).not.toBe(null);
-  })
+  });
 
   test('delete task', () => {
     const removeTask = new AddRemoveTask();
@@ -48,9 +48,9 @@ describe('add and delete', () => {
     removeTask.deleteTask(3);
 
     // check if the array contains three tasks
-    expect(removeTask.store.length).toBe(3)
+    expect(removeTask.store.length).toBe(3);
 
     // check if the inner html contains the three tasks
-    expect(document.querySelector('.task-container').children.length).toBe(3)
-  })
-})
+    expect(document.querySelector('.task-container').children.length).toBe(3);
+  });
+});
