@@ -1,10 +1,10 @@
 import {
-  markItemAsComplete, deleteAllTasks, updateInput, makeInputDefault,
+  deleteAllTasks, updateInputState, makeInputDefault,
 } from './interactive-page.js';
 
 const taskContainer = document.querySelector('.task-container');
 const enterBtn = document.querySelector('.enter');
-const clearAllBtn = document.getElementById('clear-btn');
+export const clearAllBtn = document.getElementById('clear-btn');
 const refresh = document.querySelector('.refresh');
 class AddRemoveTask {
   constructor() {
@@ -20,22 +20,32 @@ class AddRemoveTask {
     localStorage.setItem('ToDoList', JSON.stringify(this.store));
   }
 
-  clearCompletedTasks(button) {
-    button.addEventListener('click', () => {
-      this.store = this.store.filter((task) => task.completed === false);
-      taskContainer.innerHTML = '';
-      this.store.forEach((task) => {
-        this.newTask(task.description, task.index, task);
-      });
-      localStorage.setItem('ToDoList', JSON.stringify(this.store));
-    });
-  }
-
   deleteTask(index) {
     this.store = this.store.filter((task) => task.index !== index);
     this.resetIndex();
     this.newTask();
     localStorage.setItem('ToDoList', JSON.stringify(this.store));
+  }
+
+  editTask(index, value) {
+    this.store[index].description = value;
+    localStorage.setItem('ToDoList', JSON.stringify(this.store));
+  }
+
+  markItemAsComplete(index) {
+    if (this.store[index].completed) {
+      this.store[index].completed = false;
+    } else {
+      this.store[index].completed = true;
+    }
+
+    localStorage.setItem('ToDoList', JSON.stringify(this.store));
+  }
+
+  clearCompletedTasks() {
+    this.store = this.store.filter((task) => task.completed === false);
+    this.resetIndex();
+    this.newTask();
   }
 
   newTask() {
@@ -67,11 +77,20 @@ class AddRemoveTask {
       }
     });
 
-    localStorage.setItem('ToDoList', JSON.stringify(this.store));
-
     // mark item as completed
     const checkBox = document.querySelectorAll('.check');
-    markItemAsComplete(checkBox, this.store);
+
+    checkBox.forEach((box) => {
+      box.addEventListener('change', () => {
+        if (box.checked) {
+          box.nextElementSibling.classList.add('line');
+          this.markItemAsComplete(Number(box.nextElementSibling.id) - 1, this.store);
+        } else {
+          box.nextElementSibling.classList.remove('line');
+          this.markItemAsComplete(Number(box.nextElementSibling.id) - 1, this.store);
+        }
+      });
+    });
 
     // delete an item
     const deleteBtn = document.querySelectorAll('.delete');
@@ -85,8 +104,11 @@ class AddRemoveTask {
     // edit an input
     const fieldInputs = document.querySelectorAll('.new-task');
     fieldInputs.forEach((field) => {
+      field.addEventListener('input', () => {
+        this.editTask(Number(field.id) - 1, field.value);
+      });
       field.addEventListener('click', () => {
-        updateInput(field, this.store);
+        updateInputState(field);
       });
       field.addEventListener('blur', () => {
         makeInputDefault(field);
@@ -97,15 +119,15 @@ class AddRemoveTask {
         }
       });
     });
+
+    localStorage.setItem('ToDoList', JSON.stringify(this.store));
   }
 
   localStorageToWebpage() {
-    if (localStorage !== null) {
-      const store = JSON.parse(localStorage.getItem('ToDoList'));
-      store.forEach((task) => {
-        this.newTask(task.description, task.index, task);
-      });
-    }
+    const store = JSON.parse(localStorage.getItem('ToDoList'));
+    store.forEach((task) => {
+      this.newTask(task.description);
+    });
   }
 
   addNewTask(task) {
@@ -149,11 +171,9 @@ class AddRemoveTask {
       }
     });
 
-    this.clearCompletedTasks(clearAllBtn);
-    localStorage.setItem('ToDoList', JSON.stringify(this.store));
-    this.localStorageToWebpage();
     // delete all tasks
-    deleteAllTasks(refresh, taskContainer);
+    deleteAllTasks(refresh, taskContainer, this.store);
+    localStorage.setItem('ToDoList', JSON.stringify(this.store));
   }
 }
 
