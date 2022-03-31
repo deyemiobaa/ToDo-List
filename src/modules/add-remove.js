@@ -48,7 +48,7 @@ class AddRemoveTask {
     });
     localStorage.setItem('ToDoList', JSON.stringify(this.store));
   }
-  
+
   addNewTask(task) {
     const currTask = {
       index: this.store.length < 1 ? 1 : this.store.length + 1,
@@ -89,9 +89,9 @@ class AddRemoveTask {
   }
 
   clearAllTasks() {
-    this.store = []
+    this.store = [];
     localStorage.setItem('ToDoList', JSON.stringify(this.store));
-    this.newTask()
+    this.newTask();
   }
 
   localStorageToWebpage() {
@@ -101,7 +101,7 @@ class AddRemoveTask {
     });
   }
 
-  pageEvents() { 
+  pageEvents() {
     // mark item as completed
     const checkBox = document.querySelectorAll('.check');
     checkBox.forEach((box) => {

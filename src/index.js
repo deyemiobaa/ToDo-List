@@ -12,8 +12,8 @@ clearCompleteBtn.addEventListener('click', () => {
 });
 
 refresh.addEventListener('click', () => {
-  newlib.clearAllTasks()
-})
+  newlib.clearAllTasks();
+});
 
 function submitNewTaskEntry() {
   const addNewTaskInput = document.getElementById('add-new-task');
