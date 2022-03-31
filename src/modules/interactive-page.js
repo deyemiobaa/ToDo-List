@@ -1,18 +1,3 @@
-// export const markItemAsComplete = (index, array) => {
-//   array[index].completed ? array[index].completed = false : array[index].completed = true;
-//   localStorage.setItem('ToDoList', JSON.stringify(array));
-//   console.log(array)
-// };
-
-export const deleteAllTasks = (button, container, array) => {
-  button.addEventListener('click', () => {
-    container.innerHTML = '';
-    localStorage.clear();
-    array = [];
-    localStorage.setItem('ToDoList', JSON.stringify(array));
-  });
-};
-
 export const updateInputState = (field) => {
   if (field.classList.contains('line')) {
     field.readOnly = false;
