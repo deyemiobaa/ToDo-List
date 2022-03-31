@@ -1,29 +1,19 @@
-export const markItemAsComplete = (checkbox, array) => {
-  checkbox.forEach((box) => {
-    box.addEventListener('change', () => {
-      const result = array.filter(
-        (task) => Number(box.nextElementSibling.id) === task.index,
-      );
-      if (box.checked) {
-        box.nextElementSibling.classList.add('line');
-        array[result[0].index - 1].completed = true;
-      } else {
-        box.nextElementSibling.classList.remove('line');
-        array[result[0].index - 1].completed = false;
-      }
-      localStorage.setItem('ToDoList', JSON.stringify(array));
-    });
-  });
-};
+// export const markItemAsComplete = (index, array) => {
+//   array[index].completed ? array[index].completed = false : array[index].completed = true;
+//   localStorage.setItem('ToDoList', JSON.stringify(array));
+//   console.log(array)
+// };
 
-export const deleteAllTasks = (button, container) => {
+export const deleteAllTasks = (button, container, array) => {
   button.addEventListener('click', () => {
     container.innerHTML = '';
     localStorage.clear();
+    array = []
+    localStorage.setItem('ToDoList', JSON.stringify(array))
   });
 };
 
-export const updateInput = (field, array) => {
+export const updateInputState = (field) => {
   if (field.classList.contains('line')) {
     field.readOnly = false;
     field.classList.remove('line');
@@ -32,14 +22,6 @@ export const updateInput = (field, array) => {
     field.classList.add('active');
     field.readOnly = false;
   }
-
-  field.addEventListener('change', () => {
-    const result = array.filter(
-      (task) => Number(field.id) === task.index,
-    );
-    array[result[0].index - 1].description = field.value;
-    localStorage.setItem('ToDoList', JSON.stringify(array));
-  });
 };
 
 export const makeInputDefault = (field) => {
