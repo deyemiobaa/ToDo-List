@@ -8,8 +8,8 @@ export const deleteAllTasks = (button, container, array) => {
   button.addEventListener('click', () => {
     container.innerHTML = '';
     localStorage.clear();
-    array = []
-    localStorage.setItem('ToDoList', JSON.stringify(array))
+    array = [];
+    localStorage.setItem('ToDoList', JSON.stringify(array));
   });
 };
 

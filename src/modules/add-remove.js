@@ -28,20 +28,24 @@ class AddRemoveTask {
   }
 
   editTask(index, value) {
-    this.store[index].description = value
+    this.store[index].description = value;
     localStorage.setItem('ToDoList', JSON.stringify(this.store));
   }
 
-  markItemAsComplete(index, array) {
-    array[index].completed ? array[index].completed = false : array[index].completed = true;
-    localStorage.setItem('ToDoList', JSON.stringify(array));
-    console.log(array)
-  };
+  markItemAsComplete(index) {
+    if (this.store[index].completed) {
+      this.store[index].completed = false;
+    } else {
+      this.store[index].completed = true;
+    }
+
+    localStorage.setItem('ToDoList', JSON.stringify(this.store));
+  }
 
   clearCompletedTasks() {
     this.store = this.store.filter((task) => task.completed === false);
-    this.resetIndex()
-    this.newTask()
+    this.resetIndex();
+    this.newTask();
   }
 
   newTask() {
@@ -77,16 +81,16 @@ class AddRemoveTask {
     const checkBox = document.querySelectorAll('.check');
 
     checkBox.forEach((box) => {
-    box.addEventListener('change', () => {
-      if (box.checked) {
-        box.nextElementSibling.classList.add('line');
-        this.markItemAsComplete(Number(box.nextElementSibling.id) - 1, this.store)
-      } else {
-        box.nextElementSibling.classList.remove('line');
-        this.markItemAsComplete(Number(box.nextElementSibling.id) - 1, this.store)
-      }
+      box.addEventListener('change', () => {
+        if (box.checked) {
+          box.nextElementSibling.classList.add('line');
+          this.markItemAsComplete(Number(box.nextElementSibling.id) - 1, this.store);
+        } else {
+          box.nextElementSibling.classList.remove('line');
+          this.markItemAsComplete(Number(box.nextElementSibling.id) - 1, this.store);
+        }
+      });
     });
-  });
 
     // delete an item
     const deleteBtn = document.querySelectorAll('.delete');
@@ -101,8 +105,8 @@ class AddRemoveTask {
     const fieldInputs = document.querySelectorAll('.new-task');
     fieldInputs.forEach((field) => {
       field.addEventListener('input', () => {
-        this.editTask(Number(field.id) - 1, field.value)
-      })
+        this.editTask(Number(field.id) - 1, field.value);
+      });
       field.addEventListener('click', () => {
         updateInputState(field);
       });
@@ -120,7 +124,7 @@ class AddRemoveTask {
   }
 
   localStorageToWebpage() {
-    const store = JSON.parse(localStorage.getItem('ToDoList'))
+    const store = JSON.parse(localStorage.getItem('ToDoList'));
     store.forEach((task) => {
       this.newTask(task.description);
     });

@@ -60,30 +60,30 @@ describe('edit and update status', () => {
     const edit = new AddRemoveTask();
 
     // edit the task on index two
-    edit.editTask(2, 'edited this task')
+    edit.editTask(2, 'edited this task');
 
-    //check if the edit input matches the regex espression
-    expect(edit.store[2].description).toMatch(/edited/)
-  })
+    // check if the edit input matches the regex espression
+    expect(edit.store[2].description).toMatch(/edited/);
+  });
 
   test('item is completed', () => {
     const update = new AddRemoveTask();
 
     // update the status of task on index 1
-    update.markItemAsComplete(1, update.store)
+    update.markItemAsComplete(1, update.store);
 
     // check if the task is completed
-    expect(update.store[1].completed).toBe(true)
-  })
+    expect(update.store[1].completed).toBe(true);
+  });
 
   test('clear all completed', () => {
-    const completed = new AddRemoveTask()
+    const completed = new AddRemoveTask();
     // we had three tasks left and we marked one as complete
-    
+
     // clear all completed task
-    completed.clearCompletedTasks()
+    completed.clearCompletedTasks();
 
     // check if the remaining task is two
-    expect(completed.store.length).toBe(2)
-  })
-})
+    expect(completed.store.length).toBe(2);
+  });
+});
