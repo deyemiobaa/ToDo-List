@@ -49,6 +49,10 @@ Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](https://github.com/deyemiobaa/ToDo-List/issues).
 
+## Acknowledgments
+
+- Huge thanks to [Lekan](https://github.com/d2ndjim) for his contribution.
+
 ## Show your support
 
 Give a ⭐️ if you like this project!
