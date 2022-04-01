@@ -95,8 +95,7 @@ class AddRemoveTask {
   }
 
   localStorageToWebpage() {
-    const store = JSON.parse(localStorage.getItem('ToDoList'));
-    store.forEach((task) => {
+    this.store.forEach((task) => {
       this.newTask(task.description);
     });
   }
