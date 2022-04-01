@@ -95,10 +95,7 @@ class AddRemoveTask {
   }
 
   localStorageToWebpage() {
-    if (localStorage === null) {
-      localStorage.setItem('ToDoList', JSON.stringify([]));
-      return;
-    } else { 
+    if (localStorage !== null) {
       this.store.forEach((task) => {
         this.newTask(task.description);
       });
