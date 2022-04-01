@@ -95,9 +95,14 @@ class AddRemoveTask {
   }
 
   localStorageToWebpage() {
-    this.store.forEach((task) => {
-      this.newTask(task.description);
-    });
+    if (localStorage === null) {
+      localStorage.setItem('ToDoList', JSON.stringify([]));
+      return;
+    } else { 
+      this.store.forEach((task) => {
+        this.newTask(task.description);
+      });
+    }
   }
 
   pageEvents() {
