@@ -14,7 +14,7 @@ html {
   box-sizing: inherit;
   padding: 0;
   margin: 0;
-  font-size: 17px;
+  font-size: 0.9rem;
   color: #dddbf1;
 }
 
@@ -39,7 +39,8 @@ body {
 
 .list-header,
 .add-new-task {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #383f51;
@@ -76,7 +77,7 @@ input:focus {
   display: grid;
   align-items: center;
   grid-template-columns: auto 1fr auto;
-  column-gap: 20px;
+  column-gap: 10px;
   padding: 0 20px;
   border-bottom: 2px dotted #383f51;
 }
@@ -87,7 +88,8 @@ input:focus {
 }
 
 input[type=checkbox] {
-  transform: scale(1.5);
+  transform: scale(1.2);
+  margin-right: 10px;
 }
 
 .new-task {
@@ -95,6 +97,7 @@ input[type=checkbox] {
   font-family: 'Merienda', cursive;
   border-radius: 9px;
   padding-left: 10px;
+  width: 100%;
 }
 
 .active {
@@ -143,20 +146,18 @@ input[type=checkbox] {
 
 @media screen and (min-width: 600px) {
   * {
-    font-size: 20px;
+    font-size: 1.1rem;
   }
 
   .list-header > h1 {
-    font-size: 25px;
+    font-size: 1.4rem;
   }
 
   .todolist {
-    width: 70%;
+    width: 75%;
   }
 
-  .list-header,
-  .add-new-task {
-    display: grid;
-    grid-template-columns: 1fr auto;
+  input[type=checkbox] {
+    transform: scale(1.5);
   }
 }

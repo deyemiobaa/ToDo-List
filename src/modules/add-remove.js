@@ -51,7 +51,7 @@ class AddRemoveTask {
 
   addNewTask(task) {
     const currTask = {
-      index: this.store.length < 1 ? 1 : this.store.length + 1,
+      index: this.store.length + 1,
       description: task,
       completed: false,
     };
