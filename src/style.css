@@ -32,7 +32,7 @@ body {
   grid-template-rows: repeat(4, auto);
   background-color: #7a4419;
   height: max-content;
-  max-width: 900px;
+  width: 80%;
   border-radius: 20px 20px;
   border: 2px solid #383f51;
 }

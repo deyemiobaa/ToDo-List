@@ -96,11 +96,11 @@ class AddRemoveTask {
 
   localStorageToWebpage() {
     if (localStorage !== null) {
-      this.store.forEach((task) => {
-        this.newTask(task.description);
-      });
+      this.store = JSON.parse(localStorage.getItem('ToDoList')) || [];
+      this.newTask();
     }
   }
+  
 
   pageEvents() {
     // mark item as completed
