@@ -14,7 +14,7 @@ html {
   box-sizing: inherit;
   padding: 0;
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #dddbf1;
 }
 
@@ -108,7 +108,7 @@ input[type=checkbox] {
 
 .line {
   text-decoration: line-through;
-  font-size: 17px;
+  font-size: 0.9rem;
   color: #ada7ac;
 }
 
