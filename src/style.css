@@ -53,6 +53,7 @@ body {
   color: #ada7ac;
   font-family: 'Merienda', cursive;
   letter-spacing: 0.1rem;
+  width: 100%;
 }
 
 .list-header > h1 {
