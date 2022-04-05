@@ -20,10 +20,10 @@ html {
 
 body {
   display: flex;
-  margin-top: 150px;
+  margin-top: 100px;
   justify-content: center;
-  height: 100vh;
   background-color: #755c1b;
+  padding-bottom: 30px;
 }
 
 .todolist {
@@ -35,6 +35,7 @@ body {
   width: 80%;
   border-radius: 20px 20px;
   border: 2px solid #383f51;
+  z-index: 1;
 }
 
 .list-header,
@@ -56,7 +57,7 @@ body {
   width: 100%;
 }
 
-.list-header > h1 {
+.list-header>h1 {
   letter-spacing: 0.1rem;
   font-family: 'Merriweather', serif;
   font-size: 20px;
@@ -145,12 +146,24 @@ input[type=checkbox] {
   border-color: #c1c7d0 transparent transparent transparent;
 }
 
+footer {
+  position: fixed;
+  bottom: 0;
+  padding: 30px;
+}
+
+.tribute {
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+  font-family: 'Merienda', cursive;
+}
+
 @media screen and (min-width: 600px) {
   * {
     font-size: 1.1rem;
   }
 
-  .list-header > h1 {
+  .list-header>h1 {
     font-size: 1.4rem;
   }
 
